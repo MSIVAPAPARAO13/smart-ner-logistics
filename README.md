@@ -132,3 +132,33 @@ The platform natively generates structured, template-governed emergency notifica
 - [SECURITY.md](docs/SECURITY.md): RBAC, JWT, and upload security audit.
 - [API.md](docs/API.md): Full REST and WebSocket API specification.
 
+---
+
+## 🧭 Streamlit Demo Layer
+
+A Streamlit demo application has been added under `streamlit_app/` to provide a command-center style interface that calls the live FastAPI backend instead of duplicating the business logic.
+
+### Run locally
+
+```powershell
+.
+.\.venv\Scripts\Activate.ps1
+cd streamlit_app
+streamlit run app.py
+```
+
+### Required secrets
+
+Create `.streamlit/secrets.toml` locally, based on the example:
+
+```toml
+API_URL = "https://your-fastapi-api.example.com"
+MAPBOX_TOKEN = "your-mapbox-token"
+```
+
+The Streamlit app uses the real backend service over HTTPS. It does not replace the existing React frontend or FastAPI backend; it is a demo/operations view layered on top of the existing architecture.
+
+### Cloud deployment
+
+See [STREAMLIT_DEPLOYMENT.md](STREAMLIT_DEPLOYMENT.md) and [STREAMLIT_API_INTEGRATION.md](STREAMLIT_API_INTEGRATION.md) for the Community Cloud deployment and endpoint integration details.
+

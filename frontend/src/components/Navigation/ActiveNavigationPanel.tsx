@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Navigation, X, Volume2, VolumeX, AlertTriangle, CheckCircle2,
-  ChevronLeft, ChevronRight, ArrowUp, RotateCcw, Clock, MapPin,
+  ChevronLeft, ChevronRight, ArrowUp, MapPin,
 } from 'lucide-react';
 import type { RouteCandidate, RouteStep, RoutePlanResult } from './RoutePlannerCard';
 import { useTranslation } from '../../i18n/LanguageContext';
@@ -72,7 +72,6 @@ export const ActiveNavigationPanel: React.FC<ActiveNavigationPanelProps> = ({
   const [rerouteAlert, setRerouteAlert] = useState(false);
   const [distanceCountdown, setDistanceCountdown] = useState<number>(0);
   const progressRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const stepsRef = useRef(route.steps);
 
   const steps: RouteStep[] = route.steps.length > 0 ? route.steps : [];
   const currentStep = steps[currentStepIdx];

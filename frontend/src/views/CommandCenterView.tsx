@@ -10,7 +10,6 @@ import {
   Truck,
   MapPin,
   X,
-  CameraOff,
 } from 'lucide-react';
 import { NerMap } from '../components/Map/NerMap';
 import { WeatherCard } from '../components/Dashboard/WeatherCard';
@@ -361,11 +360,14 @@ export const CommandCenterView: React.FC<CommandCenterViewProps> = ({
                 CRITICAL
               </span>
             </div>
-            <div className="relative w-full h-24 bg-slate-900 rounded overflow-hidden flex flex-col items-center justify-center p-2 border border-slate-700 text-center">
-              <CameraOff className="w-5 h-5 text-slate-400 mb-1" />
-              <span className="text-[10px] font-mono font-bold text-slate-200">NO EVIDENCE IMAGE</span>
-              <span className="text-[9px] font-mono text-cyan-400">TELEMETRY GAUGE ONLY</span>
-              <div className="absolute bottom-1 left-1 bg-black/75 px-1.5 py-0.5 rounded text-[8px] font-mono text-white">
+            <div className="relative w-full h-24 bg-slate-900 rounded overflow-hidden border border-slate-700 text-center">
+              <img
+                src={((import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1').replace(/\/api\/v1$/, '').replace(/\/+$/, '') || '') + '/static/uploads/flooded_road_demo.jpg'}
+                alt="Landslide road incident"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute left-2 bottom-2 bg-black/70 px-1.5 py-0.5 rounded text-[8px] font-mono text-white">
                 12:21 IST • FL-S6-GAUGE
               </div>
             </div>

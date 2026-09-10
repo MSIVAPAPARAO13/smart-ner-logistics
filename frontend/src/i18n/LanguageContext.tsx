@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react';
+import React, { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
 import { TRANSLATIONS, type SupportedLanguage, type Translations } from './translations';
 
 const STORAGE_KEY = 'sih26002_language';

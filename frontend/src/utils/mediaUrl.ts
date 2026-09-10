@@ -4,7 +4,10 @@
  * regardless of host, port, or proxy configuration.
  */
 
-const BACKEND_BASE_URL = 'http://127.0.0.1:8000';
+const BACKEND_BASE_URL = (() => {
+  const configured = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1';
+  return configured.replace(/\/api\/v1$/, '').replace(/\/+$/, '');
+})();
 
 export function getMediaUrl(photoPath?: string | null): string {
   if (!photoPath || !photoPath.trim()) {

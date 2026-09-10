@@ -32,7 +32,8 @@ export const DemoChecklistModal: React.FC<DemoChecklistModalProps> = ({ isOpen, 
   const fetchChecklist = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/v1/health/demo-checklist');
+      const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1').replace(/\/+$/, '');
+      const res = await fetch(`${apiBaseUrl}/health/demo-checklist`);
       if (res.ok) {
         const json = await res.json();
         setData(json);

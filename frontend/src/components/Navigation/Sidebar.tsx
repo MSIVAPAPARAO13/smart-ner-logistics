@@ -12,12 +12,8 @@ import {
   Sliders,
   Map,
   FileText,
-  WifiOff,
   Hospital,
-  Shield,
-  Users,
   ClipboardList,
-  Activity,
 } from 'lucide-react';
 import { fetchCurrentUser } from '../../api/client';
 

@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [timeString, setTimeString] = useState<string>('');
   const [roleMenuOpen, setRoleMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useTranslation();
+  const { language, setLanguage } = useTranslation();
 
   const currentRole = activeRole || getActiveRole();
   const currentRoleMeta = ROLES.find(r => r.value === currentRole) ?? ROLES[0];

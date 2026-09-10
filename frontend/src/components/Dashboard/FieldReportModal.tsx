@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from 'react';
-import { X, Send, AlertTriangle, MapPin, Camera, Upload, WifiOff, Navigation, CheckCircle2, Loader2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Send, AlertTriangle, MapPin, Camera, WifiOff, Navigation, CheckCircle2, Loader2 } from 'lucide-react';
 import { submitFieldReport, uploadFieldPhoto } from '../../api/client';
 import { offlineQueue } from '../../utils/offlineQueue';
 

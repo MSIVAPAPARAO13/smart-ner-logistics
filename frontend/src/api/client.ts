@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:8000/api/v1';
+const FALLBACK_API_BASE_URL = 'http://localhost:8000/api/v1';
+export const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || FALLBACK_API_BASE_URL).replace(/\/+$/, '');
 
 export async function fetchDistricts() {
   const res = await fetch(`${API_BASE_URL}/districts`);

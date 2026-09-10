@@ -25,7 +25,15 @@ export function useSimulationSocket({
 
     const connect = () => {
       try {
-        ws = new WebSocket('ws://localhost:8000/ws/live');
+        const configuredWsUrl = import.meta.env.VITE_WS_URL || (() => {
+          const apiBase = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1').replace(/\/+$/, '');
+          if (apiBase.startsWith('http://') || apiBase.startsWith('https://')) {
+            return apiBase.replace(/^http/, 'ws').replace(/\/api\/v1$/, '') + '/ws/live';
+          }
+          return `${window.location.protocol === 'https:' ? 'wss' : 'ws'}://${window.location.host}/ws/live`;
+        })();
+
+        ws = new WebSocket(configuredWsUrl);
         socketRef.current = ws;
 
         ws.onopen = () => {

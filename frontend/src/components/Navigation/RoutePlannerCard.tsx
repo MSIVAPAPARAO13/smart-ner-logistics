@@ -1,7 +1,7 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
-  MapPin, Navigation, RefreshCw, Truck, AlertTriangle, ChevronRight,
-  CheckCircle2, XCircle, Loader2, ArrowRight, Clock, BarChart3,
+  MapPin, Navigation, RefreshCw, AlertTriangle,
+  CheckCircle2, Loader2,
 } from 'lucide-react';
 import { searchLocations, planRoute, type RoutePlanRequest } from '../../api/client';
 import { useTranslation } from '../../i18n/LanguageContext';
@@ -113,7 +113,7 @@ export const RoutePlannerCard: React.FC<RoutePlannerCardProps> = ({
   // Route params
   const [cargoType, setCargoType] = useState('EMERGENCY_MEDICAL_SUPPLIES');
   const [priority, setPriority] = useState('CRITICAL');
-  const [vehicleWeight, setVehicleWeight] = useState(16.0);
+  const vehicleWeight = 16.0;
 
   // Results
   const [planResult, setPlanResult] = useState<RoutePlanResult | null>(null);

@@ -1,10 +1,16 @@
 # Environment Variables
 .env
+.env.*
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+!.streamlit/secrets.toml.example
 .env.local
 .env.*.local
 *.env
 backend/.env
 frontend/.env
+.streamlit/secrets.toml
 
 # Node & Build
 node_modules/
@@ -23,6 +29,12 @@ env/
 venv/
 .venv/
 .pytest_cache/
+*.db
+*.sqlite
+*.sqlite3
+uploads/
+media/
+logs/
 
 # IDE
 .vscode/
