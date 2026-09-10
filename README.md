@@ -20,7 +20,8 @@ $$\mathbf{Reactive} \longrightarrow \mathbf{Intelligent} \longrightarrow \mathbf
 
 ## 🏗️ Architecture Pipeline
 
-```
+```<img width="1536" height="1024" alt="architecture pic" src="https://github.com/user-attachments/assets/09cca874-73ff-4373-b587-7540773efa83" />
+
 REAL NER ROAD GRAPH (OSM / PostGIS)
                ↓
     UNIFIED FEATURE BUILDER (neural_feature_service.py)
@@ -45,6 +46,8 @@ REAL NER ROAD GRAPH (OSM / PostGIS)
 ---
 
 ## 📊 4-Way Routing Strategy Comparison
+<img width="1536" height="1024" alt="feature list" src="https://github.com/user-attachments/assets/48d021c5-1449-467c-b258-26f1cc593ff4" />
+
 
 | Strategy Mode | Distance | Travel Time | Disruption Risk | Reliability | Computation Latency | Feasibility Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -56,6 +59,7 @@ REAL NER ROAD GRAPH (OSM / PostGIS)
 ---
 
 ## 🚀 Quickstart & Local Execution
+<img width="1536" height="1024" alt="tech1" src="https://github.com/user-attachments/assets/b7064030-2462-4abe-9c7d-3788a38d505c" />
 
 ### Prerequisites
 - Python 3.12+
