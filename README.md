@@ -1,4 +1,5 @@
 # SIH26002 — AI-Based Smart Logistics & Accessibility Intelligence Platform for the North Eastern Region (NER)
+<img width="1536" height="1024" alt="architecture pic" src="https://github.com/user-attachments/assets/dda17596-6a9d-4450-b072-efad1e9e4719" />
 
 **Organization:** Ministry of Development of North Eastern Region (MDoNER)  
 **Hackathon Problem Statement:** SIH26002  
