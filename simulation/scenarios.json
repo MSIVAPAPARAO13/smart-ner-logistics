@@ -1,0 +1,27 @@
+{
+  "scenarios": [
+    {
+      "id": "SCENARIO-MONSOON-FLOOD-NH06",
+      "name": "East Jaintia Hills Flash Flood & Landslide Disruption",
+      "corridor": "NH-6 (Guwahati - Shillong - Silchar)",
+      "hazard_type": "FLOOD",
+      "trigger_location": {
+        "name": "Ladrymbai / Sonapur Tunnel Sector",
+        "latitude": 25.3120,
+        "longitude": 92.3550
+      },
+      "affected_segments": [
+        "ROAD-NH06-SHL-SIL"
+      ],
+      "affected_bridges": [
+        "BRG-LUBHA-SONAPUR"
+      ],
+      "alternate_corridor": {
+        "name": "NH-27 / NH-54 Bypass via Nagaon & Haflong",
+        "route_id": "ROUTE-ALTERNATE-01",
+        "distance_km": 347.0,
+        "expected_delay_min": 55.0
+      }
+    }
+  ]
+}

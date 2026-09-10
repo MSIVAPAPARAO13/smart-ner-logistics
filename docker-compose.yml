@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # Spatial Database with PostGIS Extension
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: sih26002_postgis
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-sih_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-sih_secret_pass_2026}
+      POSTGRES_DB: ${POSTGRES_DB:-sih26002_ner}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sih_admin -d sih26002_ner"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # FastAPI Backend Service (ML + GNN + OR-Tools + WebSockets)
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sih26002_backend
+    environment:
+      DATABASE_URL: postgresql://sih_admin:sih_secret_pass_2026@db:5432/sih26002_ner
+      ENVIRONMENT: production
+      CORS_ORIGINS: "http://localhost:5173,http://localhost:3000,http://localhost"
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-ner_smart_logistics_jwt_secret_key_2026_mdoner}
+      OPEN_METEO_BASE_URL: https://api.open-meteo.com/v1/forecast
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+    driver: local

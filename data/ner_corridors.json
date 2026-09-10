@@ -1,0 +1,21 @@
+{
+  "region": "North Eastern Region (NER)",
+  "reference_center": [26.1445, 91.7362],
+  "states": ["Assam", "Meghalaya", "Tripura", "Mizoram", "Manipur", "Nagaland", "Arunachal Pradesh", "Sikkim"],
+  "key_corridors": [
+    {
+      "id": "CORRIDOR-NH06",
+      "name": "Guwahati - Shillong - Silchar Corridor",
+      "highways": ["NH-6", "NH-27"],
+      "length_km": 316.5,
+      "strategic_importance": "Lifeline connecting Assam/Guwahati with Barak Valley, Tripura, and Mizoram"
+    },
+    {
+      "id": "CORRIDOR-NH27-NH54",
+      "name": "Guwahati - Nagaon - Lumding - Haflong - Silchar Bypass",
+      "highways": ["NH-27", "NH-54", "NH-627"],
+      "length_km": 347.0,
+      "strategic_importance": "Vital flood/monsoon contingency detour corridor"
+    }
+  ]
+}
